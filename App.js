@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import {
+  Dimensions,
   StyleSheet,
   Text,
   View,
@@ -7,40 +8,31 @@ import {
   Image,
   TouchableHighlight,
   Button,
-  // Button,
+  Alert,
 } from 'react-native';
+import { useDimensions } from '@react-native-community/hooks';
 
 export default function App() {
-  const handlePress = () => console.log('text press');
+  console.log(useDimensions());
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text onPress={handlePress}>Hello World!</Text>
-      <TouchableHighlight onPress={() => console.log('image tapped')}>
-        <Image
-          blurRadius={1}
-          source={{
-            width: 200,
-            height: 300,
-            uri: 'https://picsum.photos/200/300',
-          }}
-        />
-      </TouchableHighlight>
-      <Button
-        title="Button!"
-        onPress={() => console.log('button clicked')}
-        color="green"
-      />
-      <StatusBar style="auto" />
+      <View
+        style={{
+          backgroundColor: 'dodgerblue',
+          width: '100%',
+          height: '40%',
+        }}
+      ></View>
     </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
+  // container: {
+  //   flex: 1,
+  //   backgroundColor: '#fff',
+  //   alignItems: 'center',
+  //   justifyContent: 'center',
+  // },
 });
